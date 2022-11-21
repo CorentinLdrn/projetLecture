@@ -20,7 +20,8 @@ const BookList = () => {
   return (
     <>
       <Link to={"/book"}>Add a book</Link> <br></br>
-      <Link to={"/"}>Home</Link>
+      <Link to={"/"}>Home</Link> <br></br>
+      <Link to={"/stats"}>Statistics</Link>
       <table className="mx-auto">
         <thead>
           <tr>
