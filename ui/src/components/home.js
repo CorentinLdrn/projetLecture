@@ -10,61 +10,63 @@ import "swiper/css/pagination";
 
 import { EffectCoverflow, Pagination } from "swiper";
 
-const BookInfo = () => {
-  return <h1>BookName</h1>;
-};
-
 const Home = () => {
   const [bookList, setBookList] = useState([]);
   const [year, setYear] = useState(2022);
-  const [visible, setVisible] = useState(false);
+
   useEffect(() => {
     axios.get("http://localhost:5000/books").then((allBooks) => {
       setBookList(allBooks.data);
     });
   }, []);
-  const availableYears = [2020, 2021, 2022];
+  const availableYears = [1995, 2021, 2022];
 
   return (
     <>
-      <Link to={"/bookList"}>Liste</Link>
-      {availableYears.map((year) => (
-        <button key={year.toString()} onClick={() => setYear(year)}>
-          {year}
-        </button>
-      ))}
-
-      <Swiper
-        //loop={true}
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={3}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
-      >
-        {bookList.map((book) =>
-          book.reading === year ? (
-            <SwiperSlide
-              key={book._id}
-              onClick={() => {
-                setVisible(!visible);
-              }}
+      <div className="flex flex-row mt-4">
+        <div className="flex flex-col-reverse items-start justify-center gap-4 ml-4">
+          {availableYears.map((year) => (
+            <button
+              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+              key={year.toString()}
+              onClick={() => setYear(year)}
             >
-              <img src={book.cover} alt="" />
-            </SwiperSlide>
-          ) : null
-        )}
-      </Swiper>
-      {visible && <BookInfo />}
+              {year}
+            </button>
+          ))}
+        </div>
+        <Swiper
+          className="w-5/6"
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={3}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          pagination={true}
+          modules={[EffectCoverflow, Pagination]}
+        >
+          {bookList.map((book) =>
+            book.reading === year ? (
+              <SwiperSlide key={book._id}>
+                <img
+                  className="hover:opacity-80 h-full w-full"
+                  src={book.cover}
+                  alt=""
+                />
+              </SwiperSlide>
+            ) : null
+          )}
+        </Swiper>
+        <Link to={"/bookList"} className="">
+          <img src="/assets/menu.svg" alt="" className="w-8" />
+        </Link>
+      </div>
     </>
   );
 };

@@ -21,8 +21,7 @@ const BookList = () => {
     <>
       <Link to={"/book"}>Add a book</Link> <br></br>
       <Link to={"/"}>Home</Link>
-      <h1>All books</h1>
-      <table>
+      <table className="mx-auto">
         <thead>
           <tr>
             <th>Title</th>
@@ -47,7 +46,7 @@ const BookList = () => {
               <td>{book.moviment}</td>
               <td>{book.reading}</td>
               <td>
-                <img src={book.cover} alt="" height={150} />
+                <img src={book.cover} alt="" className="h-28" />
               </td>
               <td>
                 <Link to={`/edit/${book._id}`}>Edit</Link>

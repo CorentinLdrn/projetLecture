@@ -10,6 +10,8 @@ const CreateBook = () => {
     country: "",
     genre: "",
     moviment: "",
+    reading: "",
+    cover: "",
   });
 
   const createBook = () => {
