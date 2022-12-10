@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="flex flex-row mt-4">
+      <div className="flex flex-row">
         <div className="flex flex-col-reverse items-start justify-center gap-4 ml-4">
           {availableYears.map((year) => (
             <button
