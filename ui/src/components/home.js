@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Link } from "react-router-dom";
 
 import "swiper/css";
 
@@ -63,9 +62,6 @@ const Home = () => {
             ) : null
           )}
         </Swiper>
-        <Link to={"/bookList"} className="">
-          <img src="/assets/menu.svg" alt="" className="w-8" />
-        </Link>
       </div>
     </>
   );

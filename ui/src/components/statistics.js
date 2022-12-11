@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 const Statistics = () => {
   const [bookList, setBookList] = useState([]);
@@ -121,7 +120,6 @@ const Statistics = () => {
 
   return (
     <>
-      <Link to={"/bookList"}>Liste</Link>
       <h1 className="text-4xl font-bold underline mb-6">
         Statistiques générales
       </h1>
