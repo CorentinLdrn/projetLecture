@@ -19,32 +19,35 @@ function BookList() {
 
   return (
     <table className="mx-auto">
-      <thead>
+      <thead className="bg-white border-b">
         <tr>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Parution</th>
-          <th>Country</th>
-          <th>reading</th>
-          <th>cover</th>
-          <th>status</th>
-          <th>actions</th>
+          <th className="text-lg ">Titre</th>
+          <th className="text-lg ">Auteur</th>
+          <th className="text-lg ">Parution</th>
+          <th className="text-lg ">Pays</th>
+          <th className="text-lg ">Lecture</th>
+          <th className="text-lg ">Couverture</th>
+          <th className="text-lg ">Statut</th>
+          <th className="text-lg ">Actions</th>
         </tr>
       </thead>
       <tbody>
         {bookList.map((book) => (
-          <tr key={book.id}>
-            <td>{book.title}</td>
-            <td>{book.author}</td>
-            <td>{book.parution}</td>
-            <td>{book.country}</td>
-            <td>{book.reading}</td>
-            <td>
-              <img src={book.cover} alt="" className="h-28" />
+          <tr
+            className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100 "
+            key={book.id}
+          >
+            <td className="text-center w-72">{book.title}</td>
+            <td className="text-center w-56">{book.author}</td>
+            <td className="text-center w-16">{book.parution}</td>
+            <td className="text-center w-24">{book.country}</td>
+            <td className="text-center w-16">{book.reading}</td>
+            <td className="w-28">
+              <img src={book.cover} alt="" className="h-32 mx-auto" />
             </td>
-            <td>{book.status}</td>
+            <td className="text-center">{book.status}</td>
 
-            <td>
+            <td className="w-48 text-center">
               <button
                 type="button"
                 className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"

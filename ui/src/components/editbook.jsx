@@ -7,14 +7,14 @@ function EditBook() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/books/${id}`).then((book) => {
-      setBook(book.data);
+    axios.get(`http://localhost:5000/books/${id}`).then((thisBook) => {
+      setBook(thisBook.data);
     });
   }, [id]);
 
   const updateBook = () => {
-    axios.patch(`http://localhost:5000/books/${id}`, book).then((book) => {
-      setBook(book.data);
+    axios.patch(`http://localhost:5000/books/${id}`, book).then((thisBook) => {
+      setBook(thisBook.data);
     });
   };
   return (

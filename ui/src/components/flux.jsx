@@ -26,7 +26,7 @@ function Flux() {
           {bookList.map((book) =>
             book.status === 'En cours' ? book.title : null,
           )}{' '}
-          ({' '}
+          (
           {bookList
             .map((book) => book.reading)
             .reduce(
@@ -45,7 +45,7 @@ function Flux() {
       <div>
         {' '}
         <table className="mx-auto">
-          <thead>
+          <thead className="bg-white border-b">
             <tr>
               <th>Title</th>
               <th>Author</th>
@@ -61,16 +61,19 @@ function Flux() {
             {bookList
               .filter((book) => book.status === 'À lire')
               .map((book) => (
-                <tr key={book.id}>
+                <tr
+                  key={book.id}
+                  className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100 "
+                >
                   <td>{book.title}</td>
                   <td>{book.author}</td>
-                  <td>{book.parution}</td>
-                  <td>{book.country}</td>
-                  <td>{book.reading}</td>
+                  <td className="text-center">{book.parution}</td>
+                  <td className="text-center">{book.country}</td>
+                  <td className="text-center">{book.reading}</td>
                   <td>
                     <img src={book.cover} alt="" className="h-28" />
                   </td>
-                  <td>{book.status}</td>
+                  <td className="text-center">{book.status}</td>
 
                   <td>
                     <button

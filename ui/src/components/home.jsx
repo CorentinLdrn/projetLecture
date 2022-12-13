@@ -2,16 +2,18 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+// eslint-disable-next-line import/no-unresolved
 import 'swiper/css';
+// eslint-disable-next-line import/no-unresolved
 import 'swiper/css/effect-coverflow';
+// eslint-disable-next-line import/no-unresolved
 import 'swiper/css/pagination';
 
 import { EffectCoverflow, Pagination } from 'swiper';
 
 function Home() {
   const [bookList, setBookList] = useState([]);
-  const [year, setYear] = useState(new Date().getFullYear());
-  const [selectedYear, setSelectedYear] = useState(2022);
+  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
     axios.get('http://localhost:5000/books').then((allBooks) => {
@@ -30,21 +32,20 @@ function Home() {
   return (
     <div className="flex flex-row">
       <div className="flex flex-col-reverse items-start justify-center gap-4 ml-4">
-        {availableYears.map((year) => (
+        {availableYears.map((availableYear) => (
           <button
             type="button"
             className={
-              year === selectedYear
+              availableYear === selectedYear
                 ? 'bg-blue-500 text-white font-semibold  py-2 px-4 border border-blue-500 hover:border-transparent rounded'
                 : 'bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'
             }
-            key={year.toString()}
+            key={availableYear.toString()}
             onClick={() => {
-              setYear(year);
-              setSelectedYear(year);
+              setSelectedYear(availableYear);
             }}
           >
-            {year}
+            {availableYear}
           </button>
         ))}
       </div>
@@ -65,7 +66,7 @@ function Home() {
         modules={[EffectCoverflow, Pagination]}
       >
         {bookList.map((book) =>
-          book.reading === year ? (
+          book.reading === selectedYear ? (
             <SwiperSlide key={book.id}>
               <img
                 className="hover:opacity-80 h-full w-full"
