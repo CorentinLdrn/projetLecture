@@ -18,7 +18,7 @@ const Home = () => {
       setBookList(allBooks.data);
     });
   }, []);
-  const availableYears = [1995, 2021, 2022];
+  const availableYears = [2021, 2022];
 
   return (
     <>

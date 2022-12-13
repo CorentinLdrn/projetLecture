@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 const EditBook = () => {
   const [book, setBook] = useState([]);
@@ -21,7 +20,6 @@ const EditBook = () => {
   };
   return (
     <>
-      <Link to={"/bookList"}>Return to book list</Link>
       <h2>Update Book Details</h2>
 
       <form onSubmit={updateBook}>
@@ -97,6 +95,18 @@ const EditBook = () => {
             value={book.cover}
             onChange={(e) => setBook({ ...book, cover: e.target.value })}
           />
+        </label>
+
+        <label>
+          Status:
+          <select
+            value={book.status}
+            onChange={(e) => setBook({ ...book, status: e.target.value })}
+          >
+            <option value="Lu">Lu</option>
+            <option value="En cours">En cours</option>
+            <option value="À lire">À lire</option>
+          </select>
         </label>
 
         <input type="submit" value="Submit" />

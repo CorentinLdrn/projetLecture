@@ -29,6 +29,7 @@ const BookList = () => {
             <th>Country</th>
             <th>reading</th>
             <th>cover</th>
+            <th>status</th>
             <th>actions</th>
           </tr>
         </thead>
@@ -43,6 +44,8 @@ const BookList = () => {
               <td>
                 <img src={book.cover} alt="" className="h-28" />
               </td>
+              <td>{book.status}</td>
+
               <td>
                 <Link to={`/edit/${book._id}`}>Edit</Link>
               </td>

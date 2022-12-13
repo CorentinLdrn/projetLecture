@@ -28,6 +28,7 @@ router.post("/", async (req, res) => {
     moviment: req.body.moviment,
     cover: req.body.cover,
     reading: req.body.reading,
+    status: req.body.status,
   });
   try {
     const newBook = await book.save();
@@ -62,6 +63,9 @@ router.patch("/:id", getBook, async (req, res) => {
   }
   if (req.body.reading != null) {
     res.book.reading = req.body.reading;
+  }
+  if (req.body.status != null) {
+    res.book.status = req.body.status;
   }
   try {
     const updatedBook = await res.book.save();

@@ -29,6 +29,10 @@ const bookSchema = new mongoose.Schema({
   reading: {
     type: Number,
   },
+  status: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("Book", bookSchema);

@@ -4,8 +4,6 @@ import axios from "axios";
 
 const Flux = () => {
   const [bookList, setBookList] = useState([]);
-  const [currentBook, setCurrentBook] = useState("Guerre et Paix");
-  const currentYear = new Date().getFullYear();
 
   useEffect(() => {
     axios.get("http://localhost:5000/books").then((allBooks) => {
@@ -16,12 +14,12 @@ const Flux = () => {
   return (
     <div>
       <div>
-        <h1>Livre actuel : {currentBook}</h1>
-        <select onChange={(e) => setCurrentBook(e.target.value)}>
+        <h1>
+          Livre actuel :{" "}
           {bookList.map((book) =>
-            book.reading === currentYear ? <option>{book.title}</option> : null
+            book.status === "En cours" ? book.title : null
           )}
-        </select>
+        </h1>
       </div>
     </div>
   );
