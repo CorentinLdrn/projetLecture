@@ -11,14 +11,22 @@ import { EffectCoverflow, Pagination } from "swiper";
 
 const Home = () => {
   const [bookList, setBookList] = useState([]);
-  const [year, setYear] = useState(2022);
+  const [year, setYear] = useState(new Date().getFullYear());
+  const [selectedYear, setSelectedYear] = useState(2022);
 
   useEffect(() => {
     axios.get("http://localhost:5000/books").then((allBooks) => {
       setBookList(allBooks.data);
     });
   }, []);
-  const availableYears = [2021, 2022];
+  const availableYears = bookList
+    .map((book) => book.reading)
+    .filter(
+      (item, index) =>
+        bookList.map((book) => book.reading).indexOf(item) === index
+    )
+    .filter(Number)
+    .sort();
 
   return (
     <>
@@ -26,9 +34,16 @@ const Home = () => {
         <div className="flex flex-col-reverse items-start justify-center gap-4 ml-4">
           {availableYears.map((year) => (
             <button
-              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+              className={
+                year === selectedYear
+                  ? "bg-blue-500 text-white font-semibold  py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                  : "bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+              }
               key={year.toString()}
-              onClick={() => setYear(year)}
+              onClick={() => {
+                setYear(year);
+                setSelectedYear(year);
+              }}
             >
               {year}
             </button>

@@ -13,13 +13,16 @@ const BookList = () => {
 
   useEffect(() => {
     axios.get("http://localhost:5000/books").then((allBooks) => {
-      setBookList(allBooks.data);
+      setBookList(
+        allBooks.data.filter((book) => {
+          return book.status !== "À lire";
+        })
+      );
     });
   }, []);
 
   return (
     <>
-      <Link to={"/book"}>Add a book</Link> <br></br>
       <table className="mx-auto">
         <thead>
           <tr>
@@ -47,9 +50,17 @@ const BookList = () => {
               <td>{book.status}</td>
 
               <td>
-                <Link to={`/edit/${book._id}`}>Edit</Link>
+                <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                  <Link to={`/edit/${book._id}`}>Edit</Link>
+                </button>
+
+                <button
+                  className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                  onClick={() => deleteBook(book._id)}
+                >
+                  Delete
+                </button>
               </td>
-              <td onClick={() => deleteBook(book._id)}>Delete</td>
             </tr>
           ))}
         </tbody>

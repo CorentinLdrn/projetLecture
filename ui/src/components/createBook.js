@@ -102,6 +102,7 @@ const CreateBook = () => {
             value={book.status}
             onChange={(e) => setBook({ ...book, status: e.target.value })}
           >
+            <option> </option>
             <option value="Lu">Lu</option>
             <option value="En cours">En cours</option>
             <option value="À lire">À lire</option>
