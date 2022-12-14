@@ -7,14 +7,16 @@ function EditBook() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/books/${id}`).then((thisBook) => {
-      setBook(thisBook.data);
+    // eslint-disable-next-line no-shadow
+    axios.get(`http://localhost:5000/books/${id}`).then((book) => {
+      setBook(book.data);
     });
   }, [id]);
 
   const updateBook = () => {
-    axios.patch(`http://localhost:5000/books/${id}`, book).then((thisBook) => {
-      setBook(thisBook.data);
+    // eslint-disable-next-line no-shadow
+    axios.patch(`http://localhost:5000/books/${id}`, book).then((book) => {
+      setBook(book.data);
     });
   };
   return (
@@ -111,6 +113,7 @@ function EditBook() {
             value={book.status}
             onChange={(e) => setBook({ ...book, status: e.target.value })}
           >
+            <option> </option>
             <option value="Lu">Lu</option>
             <option value="En cours">En cours</option>
             <option value="À lire">À lire</option>

@@ -118,21 +118,25 @@ function Statistics() {
 
   return (
     <>
-      <h1 className="text-4xl font-bold underline mb-6">
+      <h1 className="text-4xl font-bold underline mb-6 font-MartianMono">
         Statistiques générales
       </h1>
       <div>
-        <h2 className="text-2xl mb-4">Répartition par pays :</h2>
+        <h2 className="text-2xl mb-4 font-MartianMono">
+          Répartition par pays :
+        </h2>
         <div className="grid grid-cols-5 gap-4 mx-4">
           {countriesList.map((country) => (
-            <div className=" rounded-md border-2 border-red-200">
-              <h3 className="flex justify-center">{country}</h3>
+            <div className=" rounded-md border-2 border-blue-400">
+              <h3 className="flex justify-center font-MartianMono">
+                {country}
+              </h3>
               <img
                 src={flagCorrespondance[country]}
                 alt=""
                 className="h-24 mx-auto"
               />
-              <h3>
+              <h3 className="font-MartianMono">
                 Livres lus :{' '}
                 {bookList
                   .map((book) => book.country)
@@ -141,7 +145,7 @@ function Statistics() {
                     0,
                   )}
               </h3>
-              <div>
+              <div className="font-MartianMono">
                 Auteurs:{' '}
                 <ul className="list-disc list-inside ml-4 pb-2">
                   {authorsFromCountry(country)
@@ -157,11 +161,15 @@ function Statistics() {
       </div>
       <br />
       <div>
-        <h2 className="text-2xl mb-4">Répartition par auteur :</h2>
+        <h2 className="text-2xl mb-4 font-MartianMono">
+          Répartition par auteur :
+        </h2>
         {authorsList.map((author) => (
           <div className="grid grid-cols-12">
-            <bold className=" col-span-2 ml-16">{author}: </bold>
-            <strong className=" col-span-1">
+            <bold className=" col-span-2 ml-16 font-MartianMono">
+              {author}:{' '}
+            </bold>
+            <strong className=" col-span-1 font-MartianMono">
               {' '}
               {bookList
                 .map((book) => book.author)
@@ -170,7 +178,7 @@ function Statistics() {
                   0,
                 )}{' '}
             </strong>
-            <p className=" col-span-8">
+            <p className=" col-span-8 font-MartianMono">
               {' '}
               ( Livres :{' '}
               {booksFromAuthor(author)
@@ -185,11 +193,13 @@ function Statistics() {
       </div>
       <br />
       <div>
-        <h2 className="text-2xl mb-4">Répartition par siècle :</h2>
+        <h2 className="text-2xl mb-4 font-MartianMono">
+          Répartition par siècle :
+        </h2>
         <div className="grid grid-cols-4 gap-4 mx-4">
           {centuriesList.map((century) => (
-            <div className=" rounded-md border-2 border-red-200">
-              <h3 className="flex justify-center">
+            <div className=" rounded-md border-2 border-blue-400">
+              <h3 className="flex justify-center font-MartianMono">
                 {centuryInfo[century].romanNum}
               </h3>
               <img
@@ -197,10 +207,10 @@ function Statistics() {
                 alt=""
                 className="h-64 mx-auto"
               />
-              <small className="flex justify-center mb-4">
+              <small className="flex justify-center mb-4 font-MartianMono">
                 {centuryInfo[century].coverDetail}
               </small>
-              <h3>
+              <h3 className="font-MartianMono">
                 Livres lus:{' '}
                 {bookList
                   .map((book) => book.parution)

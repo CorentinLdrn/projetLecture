@@ -5,7 +5,7 @@ function NavBar() {
   const location = useLocation();
 
   return (
-    <div className="flex flex-row justify-between px-36 bg-cyan-700 text-white font-bold py-2 min w-screen fixed">
+    <div className="flex flex-row justify-between px-36 bg-blue-400 text-slate-100 font-bold py-2 min w-screen fixed font-MartianMono text-lg">
       <Link to="/" className={location.pathname === '/' ? 'underline' : ''}>
         Accueil
       </Link>

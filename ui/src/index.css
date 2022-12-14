@@ -3,10 +3,15 @@
 @tailwind utilities;
 
 body {
-  background: #eee;
+  background: #f1f5f9;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
   margin: 0;
   padding: 0;
+}
+
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #60a5fa;
+  opacity: 1;
 }

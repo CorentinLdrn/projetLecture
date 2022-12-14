@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -21,7 +22,7 @@ function Flux() {
   return (
     <div className="grid grid-cols-2">
       <div>
-        <h1>
+        <h1 className="font-MartianMono font-normal">
           Livre actuel :{' '}
           {bookList.map((book) =>
             book.status === 'En cours' ? book.title : null,
@@ -37,24 +38,22 @@ function Flux() {
         </h1>
         <button
           type="button"
-          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+          className="bg-transparent hover:bg-blue-400 text-blue-400 font-bold font-MartianMono hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
         >
           <Link to="/book">Add a book</Link>
         </button>
       </div>
       <div>
-        {' '}
-        <table className="mx-auto">
+        <table className="mx-auto mt-8">
           <thead className="bg-white border-b">
             <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Parution</th>
-              <th>Country</th>
-              <th>reading</th>
-              <th>cover</th>
-              <th>status</th>
-              <th>actions</th>
+              <th className="text-lg font-MartianMono font-bold">Titre</th>
+              <th className="text-lg font-MartianMono font-bold">Auteur</th>
+              <th className="text-lg font-MartianMono font-bold">Parution</th>
+              <th className="text-lg font-MartianMono font-bold">Pays</th>
+              <th className="text-lg font-MartianMono font-bold">Cover</th>
+              <th className="text-lg font-MartianMono font-bold">Statut</th>
+              <th className="text-lg font-MartianMono font-bold">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -65,28 +64,38 @@ function Flux() {
                   key={book.id}
                   className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100 "
                 >
-                  <td>{book.title}</td>
-                  <td>{book.author}</td>
-                  <td className="text-center">{book.parution}</td>
-                  <td className="text-center">{book.country}</td>
-                  <td className="text-center">{book.reading}</td>
-                  <td>
-                    <img src={book.cover} alt="" className="h-28" />
+                  <td className="text-center w-48 font-MartianMono font-normal">
+                    {' '}
+                    {book.title}
                   </td>
-                  <td className="text-center">{book.status}</td>
+                  <td className="text-center font-MartianMono font-normal">
+                    {book.author}
+                  </td>
+                  <td className="text-center font-MartianMono font-normal">
+                    {book.parution}
+                  </td>
+                  <td className="text-center font-MartianMono font-normal">
+                    {book.country}
+                  </td>
+                  <td className="w-24">
+                    <img src={book.cover} alt="" className="h-28 mx-auto" />
+                  </td>
+                  <td className="text-center font-MartianMono font-normal">
+                    {book.status}
+                  </td>
 
-                  <td>
+                  <td className="w-40 text-center">
                     <button
                       type="button"
-                      className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                      className="bg-transparent hover:bg-blue-400 text-blue-400 font-bold font-MartianMono hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
                     >
-                      <Link to={`/edit/${book.id}`}>Edit</Link>
+                      <Link to={`/edit/${book._id}`}>Edit</Link>
                     </button>
 
                     <button
                       type="button"
-                      className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-                      onClick={() => deleteBook(book.id)}
+                      className="bg-transparent hover:bg-blue-400 text-blue-400 font-bold font-MartianMono hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                      onClick={() => deleteBook(book._id)}
                     >
                       Delete
                     </button>
