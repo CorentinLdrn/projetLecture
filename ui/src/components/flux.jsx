@@ -20,7 +20,7 @@ function Flux() {
   };
 
   return (
-    <div className="grid grid-cols-2">
+    <div className="grid grid-cols-2 pt-12">
       <div>
         <h1 className="font-MartianMono font-normal">
           Livre actuel :{' '}

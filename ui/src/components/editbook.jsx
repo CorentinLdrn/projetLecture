@@ -21,7 +21,7 @@ function EditBook() {
   };
   return (
     <>
-      <h2>Update Book Details</h2>
+      <h2 className="pt-12">Update Book Details</h2>
 
       <form onSubmit={updateBook}>
         <label htmlFor="title">

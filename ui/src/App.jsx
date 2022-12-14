@@ -11,10 +11,9 @@ import Flux from './components/flux';
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       <BrowserRouter>
         <NavBar />
-        <div className="pt-12" />
         <Routes>
           <Route path="/flux" element={<Flux />} />
           <Route path="/stats" element={<Statistics />} />
@@ -23,8 +22,8 @@ function App() {
           <Route path="/edit/:id" element={<EditBook />} />
           <Route exact path="/" element={<Home />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }

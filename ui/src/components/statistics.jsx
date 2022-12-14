@@ -118,7 +118,7 @@ function Statistics() {
 
   return (
     <>
-      <h1 className="text-4xl font-bold underline mb-6 font-MartianMono">
+      <h1 className="text-4xl font-bold underline mb-6 font-MartianMono pt-12">
         Statistiques générales
       </h1>
       <div>
@@ -169,7 +169,7 @@ function Statistics() {
             <bold className=" col-span-2 ml-16 font-MartianMono">
               {author}:{' '}
             </bold>
-            <strong className=" col-span-1 font-MartianMono">
+            <strong className=" col-span-1 font-MartianMono text-center">
               {' '}
               {bookList
                 .map((book) => book.author)
