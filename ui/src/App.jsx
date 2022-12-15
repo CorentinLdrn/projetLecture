@@ -20,7 +20,6 @@ function App() {
           <Route path="/stats" element={<Statistics />} />
           <Route path="/book" element={<CreateBook />} />
           <Route path="/user" element={<CreateUser />} />
-
           <Route path="/bookList" element={<BookList />} />
           <Route path="/edit/:id" element={<EditBook />} />
           <Route exact path="/" element={<Home />} />

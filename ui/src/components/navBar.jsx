@@ -36,12 +36,16 @@ function NavBar() {
         Statistiques
       </Link>
       <div className="flex flex-row">
-        <img
-          alt=""
-          src={userList[0].picture}
-          className="rounded-full w-[3vh] mr-2"
-        />
-        <p>{userList[0].name}</p>
+        {userList.map((user) => (
+          <>
+            <img
+              alt=""
+              src={user.picture}
+              className="rounded-full w-[3vh] mr-3"
+            />
+            <p>{user.name}</p>{' '}
+          </>
+        ))}
       </div>
     </div>
   );
