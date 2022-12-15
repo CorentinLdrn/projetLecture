@@ -12,6 +12,9 @@ app.use(cors());
 const booksRouter = require("./routes/books");
 app.use("/books", booksRouter);
 
+const usersRouter = require("./routes/users");
+app.use("/users", usersRouter);
+
 mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

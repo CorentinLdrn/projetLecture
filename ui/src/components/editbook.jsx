@@ -21,12 +21,15 @@ function EditBook() {
   };
   return (
     <>
-      <h2 className="pt-12">Update Book Details</h2>
+      <h2 className="pt-12 mb-6 font-bold font-MartianMono text-lg">
+        Modifier les paramètres du livre:{' '}
+      </h2>
 
-      <form onSubmit={updateBook}>
+      <form className="flex flex-col gap-4" onSubmit={updateBook}>
         <label htmlFor="title">
-          Title:
+          Titre:
           <input
+            className="min-w-[60vh]"
             id="title"
             type="text"
             value={book.title}
@@ -37,8 +40,9 @@ function EditBook() {
         </label>
 
         <label htmlFor="author">
-          Author:
+          Auteur:
           <input
+            className="min-w-[60vh]"
             id="author"
             type="text"
             value={book.author}
@@ -49,6 +53,7 @@ function EditBook() {
         <label htmlFor="parution">
           Parution:
           <input
+            className="min-w-[60vh]"
             id="parution"
             type="text"
             value={book.parution}
@@ -57,15 +62,16 @@ function EditBook() {
         </label>
 
         <label htmlFor="country">
-          Country:
+          Pays:
           <input
+            className="min-w-[60vh]"
             id="country"
             type="text"
             value={book.country}
             onChange={(e) => setBook({ ...book, country: e.target.value })}
           />
         </label>
-
+        {/*
         <label htmlFor="genre">
           Genre:
           <input
@@ -77,7 +83,7 @@ function EditBook() {
         </label>
 
         <label htmlFor="moviment">
-          Moviment:
+          Mouvement:
           <input
             id="moviment"
             type="text"
@@ -85,20 +91,12 @@ function EditBook() {
             onChange={(e) => setBook({ ...book, moviment: e.target.value })}
           />
         </label>
-
-        <label htmlFor="reading">
-          Reading:
-          <input
-            id="reading"
-            type="text"
-            value={book.reading}
-            onChange={(e) => setBook({ ...book, reading: e.target.value })}
-          />
-        </label>
+          */}
 
         <label htmlFor="cover">
           Cover:
           <input
+            className="min-w-[60vh]"
             id="cover"
             type="text"
             value={book.cover}
@@ -107,8 +105,9 @@ function EditBook() {
         </label>
 
         <label htmlFor="status">
-          Status:
+          Statut:
           <select
+            className="min-w-[60vh]"
             id="status"
             value={book.status}
             onChange={(e) => setBook({ ...book, status: e.target.value })}
@@ -119,8 +118,23 @@ function EditBook() {
             <option value="À lire">À lire</option>
           </select>
         </label>
-
-        <input type="submit" value="Submit" />
+        {book.status === 'Lu' ? (
+          <label htmlFor="reading">
+            Lecture:
+            <input
+              className="min-w-[60vh]"
+              id="reading"
+              type="text"
+              value={book.reading}
+              onChange={(e) => setBook({ ...book, reading: e.target.value })}
+            />
+          </label>
+        ) : null}
+        <input
+          className="text-start bg-transparent hover:bg-blue-400 text-blue-400 font-bold font-MartianMono hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded max-w-[10vh] ml-[30vh]"
+          type="submit"
+          value="Valider"
+        />
       </form>
     </>
   );

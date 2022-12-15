@@ -29,7 +29,6 @@ function BookList() {
             <th className="text-lg font-MartianMono font-bold">Pays</th>
             <th className="text-lg font-MartianMono font-bold">Lecture</th>
             <th className="text-lg font-MartianMono font-bold">Cover</th>
-            <th className="text-lg font-MartianMono font-bold">Statut</th>
             <th className="text-lg font-MartianMono font-bold">Actions</th>
           </tr>
         </thead>
@@ -57,16 +56,13 @@ function BookList() {
               <td className="w-28">
                 <img src={book.cover} alt="" className="h-32 mx-auto" />
               </td>
-              <td className="text-center font-MartianMono font-normal">
-                {book.status}
-              </td>
 
               <td className="w-48 text-center">
                 <button
                   type="button"
                   className="bg-transparent hover:bg-blue-400 text-blue-400 font-bold font-MartianMono hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
                 >
-                  <Link to={`/edit/${book._id}`}>Edit</Link>
+                  <Link to={`/edit/${book._id}`}>Modif.</Link>
                 </button>
 
                 <button
@@ -74,7 +70,7 @@ function BookList() {
                   className="bg-transparent hover:bg-blue-400 text-blue-400 font-bold font-MartianMono hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
                   onClick={() => deleteBook(book._id)}
                 >
-                  Delete
+                  Suppr.
                 </button>
               </td>
             </tr>

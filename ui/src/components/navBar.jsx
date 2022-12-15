@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 function NavBar() {
   const location = useLocation();
+  const [userList, setUserList] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/users').then((allUsers) => {
+      setUserList(allUsers.data);
+    });
+  }, []);
 
   return (
     <div className="flex flex-row justify-between px-36 bg-blue-400 text-slate-100 font-bold py-2 min w-screen fixed font-MartianMono text-lg mb-48">
@@ -27,6 +35,14 @@ function NavBar() {
       >
         Statistiques
       </Link>
+      <div className="flex flex-row">
+        <img
+          alt=""
+          src={userList[0].picture}
+          className="rounded-full w-[3vh] mr-2"
+        />
+        <p>{userList[0].name}</p>
+      </div>
     </div>
   );
 }
