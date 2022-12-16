@@ -13,7 +13,7 @@ function NavBar() {
   }, []);
 
   return (
-    <div className="flex flex-row justify-between px-36 bg-blue-400 text-slate-100 font-bold py-2 min w-screen fixed font-MartianMono text-lg mb-48">
+    <div className="flex flex-row justify-between px-36 bg-blue-400 text-slate-100 font-bold py-2 min w-screen fixed font-MartianMono text-lg">
       <Link to="/" className={location.pathname === '/' ? 'underline' : ''}>
         Accueil
       </Link>
@@ -35,18 +35,22 @@ function NavBar() {
       >
         Statistiques
       </Link>
-      <div className="flex flex-row">
-        {userList.map((user) => (
-          <>
-            <img
-              alt=""
-              src={user.picture}
-              className="rounded-full w-[3vh] mr-3"
-            />
-            <p>{user.name}</p>{' '}
-          </>
-        ))}
-      </div>
+      <Link to="/auth">
+        <div className="flex flex-row">
+          {userList.map((user) => (
+            <>
+              <img
+                alt=""
+                src={user.picture}
+                className="rounded-full w-[3vh] mr-3"
+              />
+              <p className={location.pathname === '/auth' ? 'underline' : ''}>
+                {user.name}
+              </p>{' '}
+            </>
+          ))}
+        </div>
+      </Link>
     </div>
   );
 }

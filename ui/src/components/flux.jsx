@@ -103,7 +103,9 @@ function Flux() {
         </button>
       </div>
       <div>
-        <h1 className="font-bold font-MartianMono text-lg">Liste de lecture</h1>
+        <h1 className="font-bold font-MartianMono text-lg">
+          Liste de lecture :
+        </h1>
         <table className="mx-auto mt-8">
           <thead className="bg-white border-b">
             <tr>
