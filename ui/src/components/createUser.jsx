@@ -15,7 +15,7 @@ function CreateUser() {
 
   return (
     <>
-      <h2 className="pt-12 mb-6 font-bold font-MartianMono text-lg">
+      <h2 className="pt-11 mb-6 font-bold font-MartianMono text-lg">
         Ajouter un nouvel utilisateur:
       </h2>
       <form onSubmit={createUser} className="flex flex-col gap-4">

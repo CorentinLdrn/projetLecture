@@ -30,7 +30,7 @@ function Home() {
     .sort();
 
   return (
-    <div className="flex flex-row pt-12">
+    <div className="flex flex-row pt-11">
       <div className="flex flex-col-reverse items-start justify-center gap-4 ml-4">
         {availableYears.map((availableYear) => (
           <button

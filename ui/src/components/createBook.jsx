@@ -22,7 +22,7 @@ function CreateBook() {
 
   return (
     <>
-      <h2 className="pt-12 mb-6 font-bold font-MartianMono text-lg">
+      <h2 className="pt-11 mb-6 font-bold font-MartianMono text-lg">
         Ajouter un nouveau livre:
       </h2>
       <form onSubmit={createBook} className="flex flex-col gap-4">

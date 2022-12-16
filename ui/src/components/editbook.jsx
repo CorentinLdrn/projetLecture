@@ -21,7 +21,7 @@ function EditBook() {
   };
   return (
     <>
-      <h2 className="pt-12 mb-6 font-bold font-MartianMono text-lg">
+      <h2 className="pt-11 mb-6 font-bold font-MartianMono text-lg">
         Modifier les paramètres du livre:{' '}
       </h2>
 
