@@ -127,7 +127,7 @@ function Statistics() {
         </h2>
         <div className="grid grid-cols-5 gap-4 mx-4">
           {countriesList.map((country) => (
-            <div className=" rounded-md border-2 border-blue-400">
+            <div className=" rounded-md border-2 border-blue-400 bg-slate-100">
               <h3 className="flex justify-center font-MartianMono">
                 {country}
               </h3>
@@ -198,7 +198,7 @@ function Statistics() {
         </h2>
         <div className="grid grid-cols-4 gap-4 mx-4">
           {centuriesList.map((century) => (
-            <div className=" rounded-md border-2 border-blue-400">
+            <div className=" rounded-md border-2 border-blue-400 bg-slate-100">
               <h3 className="flex justify-center font-MartianMono">
                 {centuryInfo[century].romanNum}
               </h3>
