@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Auth() {
   const [bookList, setBookList] = useState([]);
@@ -63,9 +64,11 @@ function Auth() {
               />
             </form>
             <div className="flex justify-end pr-12 mt-4">
-              <small className="text-slate-100">
-                Pas encore de compte ? <strong>S&apos;enregistrer</strong>
-              </small>
+              <Link to="/register">
+                <small className="text-slate-100">
+                  Pas encore de compte ? <strong>S&apos;enregistrer</strong>
+                </small>
+              </Link>
             </div>
           </div>
         </div>
