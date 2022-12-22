@@ -14,7 +14,7 @@ import Register from './components/register';
 
 function App() {
   return (
-    <div className="min-h-screen ">
+    <div>
       <BrowserRouter>
         <NavBar />
         <Routes>

@@ -30,7 +30,7 @@ function Home() {
     .sort();
 
   return (
-    <div className="flex flex-row pt-11">
+    <div className="flex flex-row mt-[5vh] h-[90vh]">
       <div className="flex flex-col-reverse items-start justify-center gap-4 ml-4">
         {availableYears.map((availableYear) => (
           <button
@@ -50,7 +50,7 @@ function Home() {
         ))}
       </div>
       <Swiper
-        className="w-5/6"
+        className="w-5/6  h-[90%] my-auto"
         effect="coverflow"
         grabCursor
         centeredSlides
@@ -69,7 +69,7 @@ function Home() {
           book.reading === selectedYear ? (
             <SwiperSlide key={book.id}>
               <img
-                className="hover:opacity-80 max-h-[90vh] w-full"
+                className="hover:opacity-80 h-full "
                 src={book.cover}
                 alt=""
               />

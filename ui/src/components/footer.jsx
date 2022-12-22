@@ -4,7 +4,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="flex justify-center w-full sticky  gap-8 mt-4 top-[100vh] font-MartianMono font-bold items-center">
+    <footer className="flex justify-center w-full sticky h-[5vh] gap-8 top-[95vh] font-MartianMono font-bold items-center ">
       <small className="text-blue-400 ">
         &copy; {currentYear}, Read-it. All rights reserved.
       </small>

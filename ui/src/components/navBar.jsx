@@ -13,7 +13,7 @@ function NavBar() {
   }, []);
 
   return (
-    <div className="flex flex-row justify-between px-36 bg-blue-400 text-slate-100 font-bold py-2 min w-screen fixed font-MartianMono text-lg">
+    <div className="flex flex-row justify-between px-36 bg-blue-400 text-slate-100 font-bold w-screen fixed bottom-[95vh] font-MartianMono text-lg h-[5vh] items-center">
       <Link to="/" className={location.pathname === '/' ? 'underline' : ''}>
         Accueil
       </Link>
