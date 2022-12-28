@@ -60,14 +60,14 @@ function Home() {
           stretch: 0,
           depth: 100,
           modifier: 1,
-          slideShadows: true,
+          slideShadows: false,
         }}
         pagination
         modules={[EffectCoverflow, Pagination]}
       >
         {bookList.map((book) =>
           book.reading === selectedYear ? (
-            <SwiperSlide key={book.id}>
+            <SwiperSlide key={book.id} className="flex justify-center">
               <img
                 className="hover:opacity-80 h-full "
                 src={book.cover}
