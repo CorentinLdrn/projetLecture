@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-// import ReactEditor from './editorJS';
+import { signInWithGoogle } from '../firebase';
 
 function Flux() {
   const [bookList, setBookList] = useState([]);
@@ -102,11 +102,9 @@ function Flux() {
         >
           <Link to="/user">Ajouter un utilisateur</Link>
         </button>
-        {/*
-        <div>
-          <ReactEditor />
-        </div>
-            */}
+        <button type="button" onClick={signInWithGoogle}>
+          Sign in with Google
+        </button>
       </div>
       <div>
         <h1 className="font-bold font-MartianMono text-lg">
