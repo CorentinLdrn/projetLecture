@@ -14,7 +14,7 @@ function Auth() {
   const coverList = bookList.map((book) => book.cover);
 
   return (
-    <div className="pt-11 flex flex-col w-3/5 mx-auto">
+    <div className=" flex flex-col w-3/5 mx-auto">
       <div className="flex flex-row">
         <div className=" w-1/2 h-[70vh] flex justify-center items-center">
           <div className="m-28 ">

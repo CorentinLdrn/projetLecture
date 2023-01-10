@@ -14,20 +14,22 @@ import Register from './components/register';
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div>
       <BrowserRouter>
         <NavBar />
-        <Routes>
-          <Route path="/flux" element={<Flux />} />
-          <Route path="/stats" element={<Statistics />} />
-          <Route path="/book" element={<CreateBook />} />
-          <Route path="/user" element={<CreateUser />} />
-          <Route path="/bookList" element={<BookList />} />
-          <Route path="/edit/:id" element={<EditBook />} />
-          <Route exact path="/" element={<Home />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
+        <div className="mt-[5vh] min-h-[90vh]">
+          <Routes>
+            <Route path="/flux" element={<Flux />} />
+            <Route path="/stats" element={<Statistics />} />
+            <Route path="/book" element={<CreateBook />} />
+            <Route path="/user" element={<CreateUser />} />
+            <Route path="/bookList" element={<BookList />} />
+            <Route path="/edit/:id" element={<EditBook />} />
+            <Route exact path="/" element={<Home />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </div>
         <Footer />
       </BrowserRouter>
     </div>

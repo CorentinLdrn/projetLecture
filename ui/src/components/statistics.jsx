@@ -118,7 +118,7 @@ function Statistics() {
 
   return (
     <>
-      <h1 className="text-4xl font-bold underline mb-6 font-MartianMono pt-11">
+      <h1 className="text-4xl font-bold underline mb-6 font-MartianMono ">
         Statistiques générales
       </h1>
       <div>

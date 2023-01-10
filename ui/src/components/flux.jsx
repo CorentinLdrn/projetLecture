@@ -21,7 +21,7 @@ function Flux() {
   };
 
   return (
-    <div className="grid grid-cols-2 pt-11">
+    <div className="grid grid-cols-2">
       <div>
         <h1 className="font-bold font-MartianMono text-lg">Livre actuel : </h1>
         <table className="mx-auto mt-8">
@@ -105,6 +105,9 @@ function Flux() {
         <button type="button" onClick={signInWithGoogle}>
           Sign in with Google
         </button>
+        <h1 className="text-white font-bold">
+          {localStorage.getItem('userId')}
+        </h1>
       </div>
       <div>
         <h1 className="font-bold font-MartianMono text-lg">

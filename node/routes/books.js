@@ -29,6 +29,7 @@ router.post("/", async (req, res) => {
     cover: req.body.cover,
     reading: req.body.reading,
     status: req.body.status,
+    user: req.body.user,
   });
   try {
     const newBook = await book.save();

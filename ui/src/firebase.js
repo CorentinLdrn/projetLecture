@@ -25,13 +25,13 @@ export const signInWithGoogle = () => {
   signInWithPopup(auth, provider)
     .then((result) => {
       const name = result.user.displayName;
-
       const mail = result.user.email;
-
       const profilePic = result.user.photoURL;
+      const userId = result.user.uid;
       localStorage.setItem('name', name);
       localStorage.setItem('mail', mail);
       localStorage.setItem('profilePic', profilePic);
+      localStorage.setItem('userId', userId);
     })
     .catch((error) => {
       // eslint-disable-next-line no-console

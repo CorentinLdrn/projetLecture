@@ -19,7 +19,7 @@ function BookList() {
   }, []);
 
   return (
-    <div className="pt-11">
+    <div>
       <table className="mx-auto">
         <thead className="bg-white border-b">
           <tr>

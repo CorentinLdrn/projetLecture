@@ -12,6 +12,7 @@ function CreateBook() {
     reading: '',
     cover: '',
     status: '',
+    user: localStorage.getItem('userId'),
   });
 
   const createBook = () => {
