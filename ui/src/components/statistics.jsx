@@ -203,18 +203,18 @@ function Statistics() {
         </h2>
         {authorsList.map((author) => (
           <div className="grid grid-cols-12">
-            <bold className=" col-span-2 ml-16 font-MartianMono">
-              {author}:{' '}
-            </bold>
-            <strong className=" col-span-1 font-MartianMono text-center">
-              {' '}
-              {bookList
-                .map((book) => book.author)
-                .reduce(
-                  (sum, member) => (member === author ? sum + 1 : sum),
-                  0,
-                )}{' '}
-            </strong>
+            <div className="col-span-3">
+              <bold className=" ml-16 font-MartianMono">{author}: </bold>
+              <strong className=" font-MartianMono text-center">
+                {' '}
+                {bookList
+                  .map((book) => book.author)
+                  .reduce(
+                    (sum, member) => (member === author ? sum + 1 : sum),
+                    0,
+                  )}{' '}
+              </strong>
+            </div>
             <p className=" col-span-8 font-MartianMono">
               {' '}
               ( Livres :{' '}

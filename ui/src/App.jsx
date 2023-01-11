@@ -9,7 +9,7 @@ import Footer from './components/footer';
 import NavBar from './components/navBar';
 import Flux from './components/flux';
 import CreateUser from './components/createUser';
-import Auth from './components/auth';
+import Settings from './components/settings';
 import Register from './components/register';
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
             <Route path="/bookList" element={<BookList />} />
             <Route path="/edit/:id" element={<EditBook />} />
             <Route exact path="/" element={<Home />} />
-            <Route path="/auth" element={<Auth />} />
+            <Route path="/settings" element={<Settings />} />
             <Route path="/register" element={<Register />} />
           </Routes>
         </div>

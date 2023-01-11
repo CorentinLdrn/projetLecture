@@ -27,15 +27,21 @@ function NavBar() {
       >
         Statistiques
       </Link>
-      <Link to="/auth">
+      <Link to="/settings">
         <div className="flex flex-row">
           <img
             alt=""
-            src={localStorage.getItem('profilePic')}
+            src={
+              localStorage.getItem('profilePic')
+                ? localStorage.getItem('profilePic')
+                : 'https://www.meme-arsenal.com/memes/baad48b22ac23afb44f5a24915bca8f8.jpg'
+            }
             className="rounded-full w-[3vh] mr-3"
           />
           <p className={location.pathname === '/auth' ? 'underline' : ''}>
-            {localStorage.getItem('name')}
+            {localStorage.getItem('name')
+              ? localStorage.getItem('name')
+              : 'Se connecter'}
           </p>{' '}
         </div>
       </Link>

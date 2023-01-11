@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { signInWithGoogle } from '../firebase';
 
 function Flux() {
   const [bookList, setBookList] = useState([]);
@@ -91,7 +90,7 @@ function Flux() {
             .reduce(
               (sum, member) => (member === currentYear ? sum + 1 : sum),
               0,
-            )}
+            ) + 1}
           e livre de l&apos;année en cours)
         </p>
         <button
@@ -106,12 +105,6 @@ function Flux() {
         >
           <Link to="/user">Ajouter un utilisateur</Link>
         </button>
-        <button type="button" onClick={signInWithGoogle}>
-          Sign in with Google
-        </button>
-        <h1 className="text-white font-bold">
-          {localStorage.getItem('userId')}
-        </h1>
       </div>
       <div>
         <h1 className="font-bold font-MartianMono text-lg">
