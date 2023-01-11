@@ -14,7 +14,11 @@ function BookList() {
 
   useEffect(() => {
     axios.get('http://localhost:5000/books').then((allBooks) => {
-      setBookList(allBooks.data.filter((book) => book.status !== 'À lire'));
+      setBookList(
+        allBooks.data
+          .filter((book) => book.user === localStorage.getItem('userId'))
+          .filter((book) => book.status !== 'À lire'),
+      );
     });
   }, []);
 

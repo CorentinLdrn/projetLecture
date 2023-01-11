@@ -17,7 +17,11 @@ function Home() {
 
   useEffect(() => {
     axios.get('http://localhost:5000/books').then((allBooks) => {
-      setBookList(allBooks.data);
+      setBookList(
+        allBooks.data.filter(
+          (book) => book.user === localStorage.getItem('userId'),
+        ),
+      );
     });
   }, []);
   const availableYears = bookList

@@ -6,7 +6,11 @@ function Statistics() {
 
   useEffect(() => {
     axios.get('http://localhost:5000/books').then((allBooks) => {
-      setBookList(allBooks.data.filter((book) => book.status !== 'À lire'));
+      setBookList(
+        allBooks.data
+          .filter((book) => book.user === localStorage.getItem('userId'))
+          .filter((book) => book.status !== 'À lire'),
+      );
     });
   }, []);
 
@@ -21,6 +25,26 @@ function Statistics() {
       'https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/1920px-Flag_of_Russia.svg.png',
     Grèce:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/1920px-Flag_of_Greece.svg.png',
+    'États-Unis':
+      'https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1920px-Flag_of_the_United_States.svg.png',
+    Chine:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/1920px-Flag_of_the_People%27s_Republic_of_China.svg.png',
+    Espagne:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1920px-Bandera_de_Espa%C3%B1a.svg.png',
+    Allemagne:
+      'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1920px-Flag_of_Germany.svg.png',
+    Italie:
+      'https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/1920px-Flag_of_Italy.svg.png',
+    Brésil:
+      'https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/1280px-Flag_of_Brazil.svg.png',
+    Pologne:
+      'https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/1920px-Flag_of_Poland.svg.png',
+    'République tchèque':
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/1920px-Flag_of_the_Czech_Republic.svg.png',
+    Canada:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1920px-Flag_of_Canada_%28Pantone%29.svg.png',
+    Suède:
+      'https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/1920px-Flag_of_Sweden.svg.png',
   };
 
   const centuryInfo = {
@@ -31,6 +55,19 @@ function Statistics() {
         "Vue de l'Acropole et de l'Aréopage à Athènes, 1846, Leo von Klenze",
 
       romanNum: 'Ve siècle av. J.-C.',
+    },
+    15: {
+      cover:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Benjamin-Constant-The_Entry_of_Mahomet_II_into_Constantinople-1876.jpg/800px-Benjamin-Constant-The_Entry_of_Mahomet_II_into_Constantinople-1876.jpg',
+      coverDetail:
+        "L'entrée du sultant Mehmet II à Constantinople, 1876, Benjamin-Constant",
+      romanNum: 'XVe siècle',
+    },
+    16: {
+      cover:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Creaci%C3%B3n_de_Ad%C3%A1n.jpg/1920px-Creaci%C3%B3n_de_Ad%C3%A1n.jpg',
+      coverDetail: "La Création d'Adam, 1515, Michel-Ange",
+      romanNum: 'XVIe siècle',
     },
     17: {
       cover:
@@ -125,9 +162,9 @@ function Statistics() {
         <h2 className="text-2xl mb-4 font-MartianMono">
           Répartition par pays :
         </h2>
-        <div className="grid grid-cols-5 gap-4 mx-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mx-4">
           {countriesList.map((country) => (
-            <div className=" rounded-md border-2 border-blue-400 bg-slate-100">
+            <div className=" rounded-md border-2 border-blue-400 bg-slate-100 h-[30vh]">
               <h3 className="flex justify-center font-MartianMono">
                 {country}
               </h3>
@@ -136,7 +173,7 @@ function Statistics() {
                 alt=""
                 className="h-24 mx-auto"
               />
-              <h3 className="font-MartianMono">
+              <h3 className="font-MartianMono ">
                 Livres lus :{' '}
                 {bookList
                   .map((book) => book.country)
@@ -145,9 +182,9 @@ function Statistics() {
                     0,
                   )}
               </h3>
-              <div className="font-MartianMono">
+              <div className="font-MartianMono ">
                 Auteurs:{' '}
-                <ul className="list-disc list-inside ml-4 pb-2">
+                <ul className="list-disc list-inside ml-4 pb-2 h-[13vh] overflow-y-auto">
                   {authorsFromCountry(country)
                     .sort()
                     .map((author) => (
@@ -196,7 +233,7 @@ function Statistics() {
         <h2 className="text-2xl mb-4 font-MartianMono">
           Répartition par siècle :
         </h2>
-        <div className="grid grid-cols-4 gap-4 mx-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mx-4">
           {centuriesList.map((century) => (
             <div className=" rounded-md border-2 border-blue-400 bg-slate-100">
               <h3 className="flex justify-center font-MartianMono">
