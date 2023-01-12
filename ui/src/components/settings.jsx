@@ -19,7 +19,6 @@ function Settings() {
           <h3 className="text-white ">
             User ID : {localStorage.getItem('userId')}
           </h3>
-          <h1>reveille </h1>
         </div>
       ) : (
         <button
