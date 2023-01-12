@@ -8,13 +8,19 @@ function Footer() {
       <small className="text-blue-400 ">
         &copy; 2022-{currentYear}, Read-it. All rights reserved.
       </small>
-      <a href="https://www.linkedin.com/in/corentin-laudrin/">
+      <a
+        href="https://www.linkedin.com/in/corentin-laudrin/"
+        className="hidden sm:block"
+      >
         <img src="/assets/linkedin.svg" alt="linkedin" />
       </a>
-      <a href="https://www.instagram.com/corentinlaudrin/">
+      <a
+        href="https://www.instagram.com/corentinlaudrin/"
+        className="hidden sm:block"
+      >
         <img src="/assets/instagram.svg" alt="instagram" />
       </a>
-      <a href="https://github.com/CorentinLdrn">
+      <a href="https://github.com/CorentinLdrn" className="hidden sm:block">
         <img src="/assets/github.svg" alt="github" />
       </a>
     </footer>

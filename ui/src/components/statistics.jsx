@@ -203,7 +203,7 @@ function Statistics() {
         </h2>
         {authorsList.map((author) => (
           <div className="grid grid-cols-12">
-            <div className="col-span-3">
+            <div className="col-span-12 lg:col-span-3">
               <bold className=" ml-16 font-MartianMono text-white">
                 {author}:{' '}
               </bold>
@@ -217,7 +217,7 @@ function Statistics() {
                   )}{' '}
               </strong>
             </div>
-            <p className=" col-span-8 font-MartianMono text-white">
+            <p className=" col-span-8 font-MartianMono text-white hidden lg:block">
               {' '}
               ( Livres :{' '}
               {booksFromAuthor(author)

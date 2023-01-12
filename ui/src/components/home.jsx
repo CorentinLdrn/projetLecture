@@ -58,7 +58,7 @@ function Home() {
         effect="coverflow"
         grabCursor
         centeredSlides
-        slidesPerView={3}
+        slidesPerView={1}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -68,6 +68,11 @@ function Home() {
         }}
         pagination
         modules={[EffectCoverflow, Pagination]}
+        breakpoints={{
+          1080: {
+            slidesPerView: 3,
+          },
+        }}
       >
         {bookList.map((book) =>
           book.reading === selectedYear ? (

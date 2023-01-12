@@ -5,27 +5,53 @@ function NavBar() {
   const location = useLocation();
 
   return (
-    <div className="flex flex-row justify-between px-36 bg-blue-400 text-slate-100 font-bold w-screen fixed bottom-[95vh] font-MartianMono text-lg h-[5vh] items-center">
-      <Link to="/" className={location.pathname === '/' ? 'underline' : ''}>
-        Accueil
+    <div className="flex flex-row justify-around  bg-blue-400 text-slate-100 font-bold w-screen fixed bottom-[95vh] font-MartianMono text-lg h-[5vh] items-center">
+      <Link
+        to="/"
+        className={
+          location.pathname === '/'
+            ? 'underline flex flex-row items-center gap-2'
+            : 'flex flex-row items-center gap-2'
+        }
+      >
+        <img src="/assets/accueil.svg" alt="accueil" className="w-6" />
+        <strong className="hidden md:block">Accueil</strong>
       </Link>
       <Link
         to="/flux"
-        className={location.pathname === '/flux' ? 'underline' : ''}
+        className={
+          location.pathname === '/flux'
+            ? 'underline flex flex-row items-center gap-2'
+            : ' flex flex-row items-center gap-2'
+        }
       >
-        Activité
+        <img src="/assets/activite.svg" alt="activite" className="w-6" />
+
+        <strong className="hidden md:block">Activité</strong>
       </Link>
       <Link
         to="/bookList"
-        className={location.pathname === '/bookList' ? 'underline' : ''}
+        className={
+          location.pathname === '/bookList'
+            ? 'underline flex flex-row items-center gap-2'
+            : 'flex flex-row items-center gap-2'
+        }
       >
-        Listes
+        {' '}
+        <img src="/assets/listes.svg" alt="listes" className="w-6" />
+        <strong className="hidden md:block">Listes</strong>
       </Link>
       <Link
         to="/stats"
-        className={location.pathname === '/stats' ? 'underline' : ''}
+        className={
+          location.pathname === '/stats'
+            ? 'underline flex flex-row items-center gap-2'
+            : 'flex flex-row items-center gap-2'
+        }
       >
-        Statistiques
+        <img src="/assets/statistics.svg" alt="statistics" className="w-6" />
+
+        <strong className="hidden md:block">Statistiques</strong>
       </Link>
       <Link to="/settings">
         <div className="flex flex-row">
@@ -36,9 +62,15 @@ function NavBar() {
                 ? localStorage.getItem('profilePic')
                 : 'https://www.meme-arsenal.com/memes/baad48b22ac23afb44f5a24915bca8f8.jpg'
             }
-            className="rounded-full w-[3vh] mr-3"
+            className="rounded-full w-[3vh] mr-3 "
           />
-          <p className={location.pathname === '/auth' ? 'underline' : ''}>
+          <p
+            className={
+              location.pathname === '/settings'
+                ? 'underline hidden md:block'
+                : 'hidden md:block'
+            }
+          >
             {localStorage.getItem('name')
               ? localStorage.getItem('name')
               : 'Se connecter'}

@@ -24,7 +24,7 @@ function Flux() {
   };
 
   return (
-    <div className="grid grid-cols-2">
+    <div className="grid 2xl:grid-cols-2">
       <div>
         <div className="flex flex-row">
           <h1 className="font-bold font-MartianMono text-lg text-white">
@@ -38,15 +38,21 @@ function Flux() {
             e de l&apos;année en cours) :
           </h1>
         </div>
-        <table className="mx-auto mt-8">
+        <table className="mx-auto ">
           <thead className="bg-white border-b">
             <tr>
               <th className="text-lg font-MartianMono font-bold">Titre</th>
               <th className="text-lg font-MartianMono font-bold">Auteur</th>
               <th className="text-lg font-MartianMono font-bold">Parution</th>
-              <th className="text-lg font-MartianMono font-bold">Pays</th>
-              <th className="text-lg font-MartianMono font-bold">Cover</th>
-              <th className="text-lg font-MartianMono font-bold">Actions</th>
+              <th className="text-lg font-MartianMono font-bold hidden sm:table-cell">
+                Pays
+              </th>
+              <th className="text-lg font-MartianMono font-bold hidden sm:table-cell">
+                Cover
+              </th>
+              <th className="text-lg font-MartianMono font-bold hidden md:table-cell">
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -67,14 +73,14 @@ function Flux() {
                   <td className="text-center font-MartianMono font-normal">
                     {book.parution}
                   </td>
-                  <td className="text-center font-MartianMono font-normal">
+                  <td className="text-center font-MartianMono font-normal hidden sm:table-cell">
                     {book.country}
                   </td>
-                  <td className="w-24">
+                  <td className="w-24 hidden sm:table-cell">
                     <img src={book.cover} alt="" className="h-28 mx-auto" />
                   </td>
 
-                  <td className="w-48 text-center">
+                  <td className="w-48 text-center hidden md:table-cell">
                     <button
                       type="button"
                       className="bg-transparent hover:bg-blue-400 text-blue-400 font-bold font-MartianMono hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
@@ -94,32 +100,34 @@ function Flux() {
               ))}
           </tbody>
         </table>
-        <button
-          type="button"
-          className="bg-transparent hover:bg-blue-400 text-blue-400 font-bold font-MartianMono hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-        >
-          <Link to="/book">Ajouter un livre</Link>
-        </button>
-        <button
-          type="button"
-          className="bg-transparent hover:bg-blue-400 text-blue-400 font-bold font-MartianMono hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-        >
-          <Link to="/user">Ajouter un utilisateur</Link>
-        </button>
+        <div className=" flex justify-center ">
+          <button
+            type="button"
+            className="bg-transparent hover:bg-blue-400 text-blue-400 font-bold font-MartianMono hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+          >
+            <Link to="/book">Ajouter un livre</Link>
+          </button>
+        </div>
       </div>
       <div>
         <h1 className="font-bold font-MartianMono text-lg text-white">
           Liste de lecture :
         </h1>
-        <table className="mx-auto mt-8">
+        <table className="mx-auto mt-6">
           <thead className="bg-white border-b">
             <tr>
               <th className="text-lg font-MartianMono font-bold">Titre</th>
               <th className="text-lg font-MartianMono font-bold">Auteur</th>
               <th className="text-lg font-MartianMono font-bold">Parution</th>
-              <th className="text-lg font-MartianMono font-bold">Pays</th>
-              <th className="text-lg font-MartianMono font-bold">Cover</th>
-              <th className="text-lg font-MartianMono font-bold">Actions</th>
+              <th className="text-lg font-MartianMono font-bold hidden sm:table-cell">
+                Pays
+              </th>
+              <th className="text-lg font-MartianMono font-bold hidden sm:table-cell">
+                Cover
+              </th>
+              <th className="text-lg font-MartianMono font-bold hidden md:table-cell">
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -140,14 +148,14 @@ function Flux() {
                   <td className="text-center font-MartianMono font-normal">
                     {book.parution}
                   </td>
-                  <td className="text-center font-MartianMono font-normal">
+                  <td className="text-center font-MartianMono font-normal hidden sm:table-cell">
                     {book.country}
                   </td>
-                  <td className="w-24">
+                  <td className="w-24 hidden sm:table-cell">
                     <img src={book.cover} alt="" className="h-28 mx-auto" />
                   </td>
 
-                  <td className="w-48 text-center">
+                  <td className="w-48 text-center hidden md:table-cell">
                     <button
                       type="button"
                       className="bg-transparent hover:bg-blue-400 text-blue-400 font-bold font-MartianMono hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"

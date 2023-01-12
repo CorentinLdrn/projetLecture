@@ -17,7 +17,7 @@ function BookList() {
       setBookList(
         allBooks.data
           .filter((book) => book.user === localStorage.getItem('userId'))
-          .filter((book) => book.status !== 'À lire'),
+          .filter((book) => book.status === 'Lu'),
       );
     });
   }, []);
@@ -30,10 +30,18 @@ function BookList() {
             <th className="text-lg font-MartianMono font-bold">Titre</th>
             <th className="text-lg font-MartianMono font-bold">Auteur</th>
             <th className="text-lg font-MartianMono font-bold">Parution</th>
-            <th className="text-lg font-MartianMono font-bold">Pays</th>
-            <th className="text-lg font-MartianMono font-bold">Lecture</th>
-            <th className="text-lg font-MartianMono font-bold">Cover</th>
-            <th className="text-lg font-MartianMono font-bold">Actions</th>
+            <th className="text-lg font-MartianMono font-bold hidden sm:table-cell">
+              Pays
+            </th>
+            <th className="text-lg font-MartianMono font-bold hidden sm:table-cell">
+              Lecture
+            </th>
+            <th className="text-lg font-MartianMono font-bold hidden md:table-cell">
+              Cover
+            </th>
+            <th className="text-lg font-MartianMono font-bold hidden md:table-cell">
+              Actions
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -51,17 +59,16 @@ function BookList() {
               <td className="text-center w-16 font-MartianMono font-normal">
                 {book.parution}
               </td>
-              <td className="text-center w-24 font-MartianMono font-normal">
+              <td className="text-center w-24 font-MartianMono font-normal hidden sm:table-cell">
                 {book.country}
               </td>
-              <td className="text-center w-16 font-MartianMono font-normal">
+              <td className="text-center w-16 font-MartianMono font-normal hidden sm:table-cell">
                 {book.reading}
               </td>
-              <td className="w-28">
+              <td className="w-28 hidden md:table-cell">
                 <img src={book.cover} alt="" className="h-32 mx-auto" />
               </td>
-
-              <td className="w-48 text-center">
+              <td className="w-48 text-center hidden md:table-cell">
                 <button
                   type="button"
                   className="bg-transparent hover:bg-blue-400 text-blue-400 font-bold font-MartianMono hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
