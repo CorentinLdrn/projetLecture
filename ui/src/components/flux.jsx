@@ -26,9 +26,18 @@ function Flux() {
   return (
     <div className="grid grid-cols-2">
       <div>
-        <h1 className="font-bold font-MartianMono text-lg text-white">
-          Livre actuel :{' '}
-        </h1>
+        <div className="flex flex-row">
+          <h1 className="font-bold font-MartianMono text-lg text-white">
+            Livre actuel (
+            {bookList
+              .map((book) => book.reading)
+              .reduce(
+                (sum, member) => (member === currentYear ? sum + 1 : sum),
+                0,
+              ) + 1}
+            e de l&apos;année en cours) :
+          </h1>
+        </div>
         <table className="mx-auto mt-8">
           <thead className="bg-white border-b">
             <tr>
@@ -85,16 +94,6 @@ function Flux() {
               ))}
           </tbody>
         </table>
-        <p className="text-white">
-          (
-          {bookList
-            .map((book) => book.reading)
-            .reduce(
-              (sum, member) => (member === currentYear ? sum + 1 : sum),
-              0,
-            ) + 1}
-          e livre de l&apos;année en cours)
-        </p>
         <button
           type="button"
           className="bg-transparent hover:bg-blue-400 text-blue-400 font-bold font-MartianMono hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
