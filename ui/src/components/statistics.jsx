@@ -155,11 +155,11 @@ function Statistics() {
 
   return (
     <>
-      <h1 className="text-4xl font-bold underline mb-6 font-MartianMono ">
+      <h1 className="text-4xl font-bold underline mb-6 font-MartianMono text-white">
         Statistiques générales
       </h1>
       <div>
-        <h2 className="text-2xl mb-4 font-MartianMono">
+        <h2 className="text-2xl mb-4 font-MartianMono text-white">
           Répartition par pays :
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mx-4">
@@ -198,14 +198,16 @@ function Statistics() {
       </div>
       <br />
       <div>
-        <h2 className="text-2xl mb-4 font-MartianMono">
+        <h2 className="text-2xl mb-4 font-MartianMono text-white">
           Répartition par auteur :
         </h2>
         {authorsList.map((author) => (
           <div className="grid grid-cols-12">
             <div className="col-span-3">
-              <bold className=" ml-16 font-MartianMono">{author}: </bold>
-              <strong className=" font-MartianMono text-center">
+              <bold className=" ml-16 font-MartianMono text-white">
+                {author}:{' '}
+              </bold>
+              <strong className=" font-MartianMono text-center text-white">
                 {' '}
                 {bookList
                   .map((book) => book.author)
@@ -215,7 +217,7 @@ function Statistics() {
                   )}{' '}
               </strong>
             </div>
-            <p className=" col-span-8 font-MartianMono">
+            <p className=" col-span-8 font-MartianMono text-white">
               {' '}
               ( Livres :{' '}
               {booksFromAuthor(author)
@@ -230,7 +232,7 @@ function Statistics() {
       </div>
       <br />
       <div>
-        <h2 className="text-2xl mb-4 font-MartianMono">
+        <h2 className="text-2xl mb-4 font-MartianMono text-white">
           Répartition par siècle :
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mx-4">

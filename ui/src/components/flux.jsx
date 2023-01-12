@@ -26,7 +26,9 @@ function Flux() {
   return (
     <div className="grid grid-cols-2">
       <div>
-        <h1 className="font-bold font-MartianMono text-lg">Livre actuel : </h1>
+        <h1 className="font-bold font-MartianMono text-lg text-white">
+          Livre actuel :{' '}
+        </h1>
         <table className="mx-auto mt-8">
           <thead className="bg-white border-b">
             <tr>
@@ -83,7 +85,7 @@ function Flux() {
               ))}
           </tbody>
         </table>
-        <p>
+        <p className="text-white">
           (
           {bookList
             .map((book) => book.reading)
@@ -107,7 +109,7 @@ function Flux() {
         </button>
       </div>
       <div>
-        <h1 className="font-bold font-MartianMono text-lg">
+        <h1 className="font-bold font-MartianMono text-lg text-white">
           Liste de lecture :
         </h1>
         <table className="mx-auto mt-8">
