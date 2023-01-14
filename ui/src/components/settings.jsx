@@ -11,7 +11,7 @@ function Settings() {
             alt=""
             src={localStorage.getItem('profilePic')}
             className="rounded-full w-[9vh] mr-3"
-          />
+          />{' '}
           <h1 className="text-white font-bold text-2xl ">
             {localStorage.getItem('name')}
           </h1>
