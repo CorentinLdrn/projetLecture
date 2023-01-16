@@ -202,12 +202,12 @@ function Statistics() {
           Répartition par auteur :
         </h2>
         {authorsList.map((author) => (
-          <div className="grid grid-cols-12">
+          <div className="group grid grid-cols-12">
             <div className="col-span-12 lg:col-span-3">
               <bold className=" ml-16 font-MartianMono text-white">
                 {author}:{' '}
               </bold>
-              <strong className=" font-MartianMono text-center text-white">
+              <strong className="font-MartianMono text-center text-white">
                 {' '}
                 {bookList
                   .map((book) => book.author)
@@ -217,7 +217,8 @@ function Statistics() {
                   )}{' '}
               </strong>
             </div>
-            <p className=" col-span-8 font-MartianMono text-white hidden lg:block">
+
+            <p className=" col-span-8 font-MartianMono text-white invisible group-hover:visible">
               {' '}
               ( Livres :{' '}
               {booksFromAuthor(author)

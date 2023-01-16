@@ -38,7 +38,7 @@ function Flux() {
             e de l&apos;année en cours) :
           </h1>
         </div>
-        <table className="mx-auto ">
+        <table className="mx-auto mt-[3vh]">
           <thead className="bg-white border-b">
             <tr>
               <th className="text-lg font-MartianMono font-bold">Titre</th>
@@ -100,7 +100,7 @@ function Flux() {
               ))}
           </tbody>
         </table>
-        <div className=" flex justify-center ">
+        <div className=" flex justify-center mt-[5vh]">
           <button
             type="button"
             className="bg-transparent hover:bg-blue-400 text-blue-400 font-bold font-MartianMono hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
@@ -113,7 +113,7 @@ function Flux() {
         <h1 className="font-bold font-MartianMono text-lg text-white">
           Liste de lecture :
         </h1>
-        <table className="mx-auto mt-6">
+        <table className="mx-auto  mt-[3vh]">
           <thead className="bg-white border-b">
             <tr>
               <th className="text-lg font-MartianMono font-bold">Titre</th>

@@ -4,7 +4,9 @@ module.exports = {
   content: ['./src/**/*.{html,js,jsx}'],
   theme: {
     fontFamily: { MartianMono: ['monospace'] },
-    extend: {},
+    extend: {
+      visibility: ['group-hover'],
+    },
   },
   plugins: [],
 };
