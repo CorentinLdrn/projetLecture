@@ -30,7 +30,7 @@ function EditBook() {
           <label htmlFor="title">
             Titre:
             <input
-              className=" min-w-[60vh]"
+              className="text-center min-w-[60vh]"
               id="title"
               type="text"
               value={book.title}

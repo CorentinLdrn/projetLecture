@@ -102,6 +102,15 @@ function Statistics() {
     },
   };
 
+  const readingList = bookList
+    .map((book) => book.reading)
+    .filter(
+      (item, index) =>
+        bookList.map((book) => book.reading).indexOf(item) === index,
+    )
+    .filter(Number)
+    .sort();
+
   const countriesList = bookList
     .map((book) => book.country)
     .filter(
@@ -162,9 +171,9 @@ function Statistics() {
         <h2 className="text-2xl mb-4 font-MartianMono text-white">
           Répartition par pays :
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mx-4">
+        <div className="flex flex-wrap  justify-around">
           {countriesList.map((country) => (
-            <div className=" rounded-md border-2 border-blue-400 bg-slate-100 h-[30vh]">
+            <div className=" rounded-md border-2 border-blue-400 bg-slate-100 h-[37vh] w-[23vw] min-w-[400px]">
               <h3 className="flex justify-center font-MartianMono">
                 {country}
               </h3>
@@ -184,7 +193,7 @@ function Statistics() {
               </h3>
               <div className="font-MartianMono ">
                 Auteurs:{' '}
-                <ul className="list-disc list-inside ml-4 pb-2 h-[13vh] overflow-y-auto">
+                <ul className="list-disc list-inside ml-4 pb-2 h-[20vh] overflow-y-auto">
                   {authorsFromCountry(country)
                     .sort()
                     .map((author) => (
@@ -196,49 +205,15 @@ function Statistics() {
           ))}
         </div>
       </div>
-      <br />
-      <div>
-        <h2 className="text-2xl mb-4 font-MartianMono text-white">
-          Répartition par auteur :
-        </h2>
-        {authorsList.map((author) => (
-          <div className="group grid grid-cols-12">
-            <div className="col-span-12 lg:col-span-3">
-              <bold className=" ml-16 font-MartianMono text-white">
-                {author}:{' '}
-              </bold>
-              <strong className="font-MartianMono text-center text-white">
-                {' '}
-                {bookList
-                  .map((book) => book.author)
-                  .reduce(
-                    (sum, member) => (member === author ? sum + 1 : sum),
-                    0,
-                  )}{' '}
-              </strong>
-            </div>
 
-            <p className=" col-span-8 font-MartianMono text-white invisible group-hover:visible">
-              {' '}
-              ( Livres :{' '}
-              {booksFromAuthor(author)
-                .sort()
-                .map((book) => (
-                  <li className="inline">{book}. </li>
-                ))}
-              )
-            </p>
-          </div>
-        ))}
-      </div>
       <br />
       <div>
         <h2 className="text-2xl mb-4 font-MartianMono text-white">
           Répartition par siècle :
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mx-4">
+        <div className="flex flex-wrap justify-around">
           {centuriesList.map((century) => (
-            <div className=" rounded-md border-2 border-blue-400 bg-slate-100">
+            <div className=" rounded-md border-2 border-blue-400 bg-slate-100 h-[37vh] w-[23vw] min-w-[400px]">
               <h3 className="flex justify-center font-MartianMono">
                 {centuryInfo[century].romanNum}
               </h3>
@@ -250,7 +225,7 @@ function Statistics() {
               <small className="flex justify-center mb-4 font-MartianMono">
                 {centuryInfo[century].coverDetail}
               </small>
-              <h3 className="font-MartianMono">
+              <h3 className="font-MartianMono flex justify-center">
                 Livres lus:{' '}
                 {bookList
                   .map((book) => book.parution)
@@ -267,6 +242,65 @@ function Statistics() {
             </div>
           ))}
         </div>
+      </div>
+      <br />
+
+      <div>
+        <h2 className="text-2xl mb-4 font-MartianMono text-white">
+          Répartition par auteur :
+        </h2>
+        {authorsList.map((author) => (
+          <div className="group flex flex-row gap-[5vh] items-center">
+            <div className="">
+              <bold className="ml-[15vh] font-MartianMono text-white">
+                {author}:{' '}
+              </bold>
+              <strong className="font-MartianMono text-center text-white">
+                {' '}
+                {bookList
+                  .map((book) => book.author)
+                  .reduce(
+                    (sum, member) => (member === author ? sum + 1 : sum),
+                    0,
+                  )}{' '}
+              </strong>
+            </div>
+
+            <p className="italic font-MartianMono text-white invisible group-hover:visible hidden lg:block text-xs ">
+              {' '}
+              {booksFromAuthor(author)
+                .sort()
+                .map((book) => (
+                  <li className="inline">{book}. </li>
+                ))}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <br />
+      <div>
+        <h2 className="text-2xl mb-4 font-MartianMono text-white">
+          Répartition par année de lecture :
+        </h2>
+        {readingList.map((year) => (
+          <div className="group flex flex-row gap-[5vh] items-center">
+            <div className="">
+              <bold className="ml-[15vh] font-MartianMono text-white">
+                {year}:{' '}
+              </bold>
+              <strong className="font-MartianMono text-center text-white">
+                {' '}
+                {bookList
+                  .map((book) => book.reading)
+                  .reduce(
+                    (sum, member) => (member === year ? sum + 1 : sum),
+                    0,
+                  )}{' '}
+              </strong>
+            </div>
+          </div>
+        ))}
       </div>
     </>
   );
