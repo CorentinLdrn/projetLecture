@@ -168,10 +168,10 @@ function Statistics() {
         Statistiques générales
       </h1>
       <div>
-        <h2 className="text-2xl mb-4 font-MartianMono text-white">
+        <h2 className="text-2xl mb-4 font-MartianMono text-white ml-[10vw]">
           Répartition par pays :
         </h2>
-        <div className="flex flex-wrap  justify-around">
+        <div className="flex flex-wrap  justify-around mx-auto w-[70vw]">
           {countriesList.map((country) => (
             <div className=" rounded-md border-2 border-blue-400 bg-slate-100 h-[37vh] w-[23vw] min-w-[400px]">
               <h3 className="flex justify-center font-MartianMono">
@@ -208,10 +208,10 @@ function Statistics() {
 
       <br />
       <div>
-        <h2 className="text-2xl mb-4 font-MartianMono text-white">
+        <h2 className="text-2xl mb-4 font-MartianMono text-white ml-[10vw]">
           Répartition par siècle :
         </h2>
-        <div className="flex flex-wrap justify-around">
+        <div className="flex flex-wrap justify-around mx-auto w-[70vw]">
           {centuriesList.map((century) => (
             <div className=" rounded-md border-2 border-blue-400 bg-slate-100 h-[37vh] w-[23vw] min-w-[400px]">
               <h3 className="flex justify-center font-MartianMono">
@@ -246,11 +246,11 @@ function Statistics() {
       <br />
 
       <div>
-        <h2 className="text-2xl mb-4 font-MartianMono text-white">
+        <h2 className="text-2xl mb-4 font-MartianMono text-white ml-[10vw]">
           Répartition par auteur :
         </h2>
         {authorsList.map((author) => (
-          <div className="group flex flex-row gap-[5vh] items-center">
+          <div className="group flex flex-row gap-[5vh] items-center mx-auto w-[70vw]">
             <div className="">
               <bold className="ml-[15vh] font-MartianMono text-white">
                 {author}:{' '}
@@ -280,11 +280,11 @@ function Statistics() {
 
       <br />
       <div>
-        <h2 className="text-2xl mb-4 font-MartianMono text-white">
+        <h2 className="text-2xl mb-4 font-MartianMono text-white ml-[10vw]">
           Répartition par année de lecture :
         </h2>
         {readingList.map((year) => (
-          <div className="group flex flex-row gap-[5vh] items-center">
+          <div className="group flex flex-row gap-[5vh] items-center mx-auto w-[70vw]">
             <div className="">
               <bold className="ml-[15vh] font-MartianMono text-white">
                 {year}:{' '}
