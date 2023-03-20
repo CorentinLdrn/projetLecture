@@ -10,17 +10,26 @@ function Footer() {
       </small>
       <a
         href="https://www.linkedin.com/in/corentin-laudrin/"
+        target="_blank"
+        rel="noopener noreferrer"
         className="hidden sm:block"
       >
         <img src="/assets/linkedin.svg" alt="linkedin" />
       </a>
       <a
         href="https://www.instagram.com/corentinlaudrin/"
+        target="_blank"
+        rel="noopener noreferrer"
         className="hidden sm:block"
       >
         <img src="/assets/instagram.svg" alt="instagram" />
       </a>
-      <a href="https://github.com/CorentinLdrn" className="hidden sm:block">
+      <a
+        href="https://github.com/CorentinLdrn"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hidden sm:block"
+      >
         <img src="/assets/github.svg" alt="github" />
       </a>
     </footer>
