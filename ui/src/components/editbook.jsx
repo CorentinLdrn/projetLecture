@@ -43,7 +43,7 @@ function EditBook() {
           <label htmlFor="author">
             Auteur:
             <input
-              className="min-w-[60vh]"
+              className="text-center min-w-[60vh]"
               id="author"
               type="text"
               value={book.author}
@@ -54,7 +54,7 @@ function EditBook() {
           <label htmlFor="parution">
             Parution:
             <input
-              className="min-w-[60vh]"
+              className="text-center min-w-[60vh]"
               id="parution"
               type="text"
               value={book.parution}
@@ -65,7 +65,7 @@ function EditBook() {
           <label htmlFor="country">
             Pays:
             <input
-              className="min-w-[60vh]"
+              className="text-center min-w-[60vh]"
               id="country"
               type="text"
               value={book.country}
