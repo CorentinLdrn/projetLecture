@@ -23,6 +23,7 @@ function Flux() {
     });
   };
 
+  console.log(bookList);
   return (
     <div className="grid 2xl:grid-cols-2">
       <div>
