@@ -24,7 +24,7 @@ function BookList() {
 
   return (
     <div>
-      <table className="mx-auto">
+      <table className="mx-auto my-8">
         <thead className="bg-white border-b">
           <tr>
             <th className="text-lg font-MartianMono font-bold">Titre</th>
